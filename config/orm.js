@@ -1,24 +1,24 @@
 var connection = require("./connection.js");
 
 var orm = {
-    addBurger: function(burger_name) {
-        var queryString = "INSERT INTO burgers (burger_name) VALUES(?)";
-        connection.query(queryString, [burger_name], function(err, result){
+    addBurger: function(table, burger_name, cb) {
+        var queryString = "INSERT INTO ?? (burger_name) VALUES(?)";
+        connection.query(queryString, [table, burger_name], function(err, result){
             if (err) { 
                 throw err;
             }
-        return result
+            cb(result)
 
         });
     },
 
-    devourBurger: function(id) {
-        var queryString = "UPDATE burgers SET devoursed = 1 WHERE id = ?";
-        connection.query(queryString, [id], function(err, result){
+    devourBurger: function(table, id, cb) {
+        var queryString = "UPDATE ?? SET devoured = 1 WHERE id = ?";
+        connection.query(queryString, [table, id], function(err, result){
             if (err) {
                 throw err
             }
-            return result
+            cb(result)
     
             });
     },
@@ -30,7 +30,7 @@ var orm = {
             throw err;
           }
           cb(result);
-          console.log(cb)
+          
         });
       }
 };

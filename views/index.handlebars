@@ -1,7 +1,49 @@
+<style>
+    .card{
+    width: 100px;
+    height: 100px;
+    float: left;
+    border: solid black 1px;
+    margin: 5px;
+    padding: 5px;
+    }
+
+    .container{
+        padding: 20px;
+    }
+
+    .listGroup{
+        height: 50vh;
+    }
+
+</style>
+
+
+<div class="container">
 <h1>Burger Time</h1>
 
-<ul>
+    <div class="listGroup">
+        <h2>On the list:</h2>
     {{#each burgers}}
-        <li>{{burger_name}}</li>
+        {{#unless devoured}}
+             
+        <div class="card">
+            <h5 class="card-title">{{burger_name}}</h5>
+            <a href="#" class="btn btn-primary">Devour!</a>
+            </div>
+            {{/unless}}
         {{/each}}
-</ul>
+        </div>
+    
+    <div class="listGroup">
+        <h2>Already done!</h2>
+    {{#each burgers}}
+        {{#if devoured}}
+        <div class="card">
+            <h5 class="card-title">{{burger_name}}</h5>
+            </div>
+            {{/if}}
+        {{/each}}
+    </div>
+</div>
+
