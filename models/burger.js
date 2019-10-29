@@ -8,7 +8,7 @@ var burger = {
     },
 
     devourBurger: function(table, id, cb) {
-        orm.devourBurger("burgers", id), function(res) {
+        orm.devourBurger(table, id), function(res) {
             cb(res)
         };
     },

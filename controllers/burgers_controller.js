@@ -22,7 +22,7 @@ router.put("/api/burgers/:id", function(req, res) {
     var condition = req.params.id;
     console.log("condition ", condition);
 
-    burger.devourBurger(condition, function(result) {
+    burger.devourBurger("burgers", condition, function(result) {
         if (result.changedRows === 0) {
             return res.status(404).end()
         }

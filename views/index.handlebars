@@ -29,7 +29,7 @@
              
         <div class="card">
             <h5 class="card-title">{{burger_name}}</h5>
-            <a href="#" class="btn btn-primary">Devour!</a>
+            <button class="devourButton" data-id="{{id}}">Devour!</button>
             </div>
             {{/unless}}
         {{/each}}
@@ -46,4 +46,18 @@
         {{/each}}
     </div>
 </div>
+
+<script>
+    $(".devourButton").on("click", function(event) {
+        var id = $(this).data("id");
+
+        $.ajax("/api/burgers/" + id, {
+            type: "PUT"
+        }).then(function(){
+            console.log("devoured")
+
+            location.reload(true);
+        })
+    })
+</script>
 
