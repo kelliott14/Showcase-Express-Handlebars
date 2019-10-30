@@ -1,8 +1,20 @@
-.card{
-    width: 18rem;
-    height: 18rem;
-}
-
 body{
     background-color: aqua;
 }
+
+.card{
+    width: 100px;
+    height: 100px;
+    float: left;
+    border: solid black 1px;
+    margin: 5px;
+    padding: 5px;
+    }
+
+    .container{
+        padding: 20px;
+    }
+
+    .listGroup{
+        height: 50vh;
+    }
