@@ -12,15 +12,13 @@ var orm = {
         });
     },
 
-    devourBurger: function(table, id, cb) {
+    devourBurger: function(table, id) {
         var queryString = "UPDATE ?? SET devoured = 1 WHERE id = ?";
         connection.query(queryString, [table, id], function(err, result){
-            if (err) {
+            if (err) 
                 throw err
-            }
-           // cb(result)
-    
-            });
+            
+        });
     },
 
     all: function(tableInput, cb) {

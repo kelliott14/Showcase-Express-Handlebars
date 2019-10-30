@@ -7,8 +7,7 @@ $(".devourButton").on("click", function(event) {
     }).then(function(){
         console.log("devoured")
 
-        location.reload(true);
-    })
-})
+    });
+    location.reload();
+});
 
-console.log("js loaded")
