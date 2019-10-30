@@ -13,7 +13,9 @@ app.get("/", function(req, res) {
   });
 
 app.post("/api/burgers", function(req, res) {
-    burger.addBurger(["burger_name"], [req.body.name], function(result) {
+  console.log("app.post working")
+  console.log(req.body.burger_name)
+    burger.addBurger("burger_name", [req.body.burger_name], function(result) {
         res.json({id: result.insertID});
     });
 });

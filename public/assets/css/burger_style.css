@@ -3,18 +3,15 @@ body{
 }
 
 .card{
-    width: 100px;
-    height: 100px;
-    float: left;
     border: solid black 1px;
     margin: 5px;
     padding: 5px;
     }
 
-    .container{
-        padding: 20px;
-    }
+.container{
+    padding: 20px;
+}
 
-    .listGroup{
-        height: 50vh;
-    }
+h2{
+    margin-top: 20px;
+}

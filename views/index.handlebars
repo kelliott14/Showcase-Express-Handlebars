@@ -1,21 +1,30 @@
 <div class="container">
 <h1>Burger Time</h1>
 
-    <div class="listGroup">
-        <h2>On the list:</h2>
+    <h2>Add to the list:</h2>
+        <form class="create-form">
+            <div class="form-group">
+                <label for="burgerInput">Add an item to the list</label>
+                <input type="input" class="form-control" id="userInput" name="addInput" placeholder="Add your item here">
+            </div>
+            <button type="submit" class="btn btn-info">Add</button>
+        </form>
+
+    <h2>On the list:</h2>
+    <div class="listGroup card-columns">
     {{#each burgers}}
         {{#unless devoured}}
              
         <div class="card">
             <h5 class="card-title">{{burger_name}}</h5>
-            <button class="devourButton" data-id="{{id}}">Devour!</button>
+            <button class="devourButton btn btn-info" data-id="{{id}}">Devour!</button>
             </div>
             {{/unless}}
         {{/each}}
         </div>
     
-    <div class="listGroup">
-        <h2>Already done!</h2>
+    <h2>Already done!</h2>
+    <div class="listGroup card-columns">
     {{#each burgers}}
         {{#if devoured}}
         <div class="card">

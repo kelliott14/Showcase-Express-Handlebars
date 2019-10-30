@@ -11,3 +11,19 @@ $(".devourButton").on("click", function(event) {
     location.reload();
 });
 
+$(".create-form").on("submit", function(event) {
+    event.preventDefault();
+    console.log("burger js called")
+    var newBurger = {
+        burger_name: $("#userInput").val().trim()
+    };
+    console.log(newBurger)
+    $.ajax("/api/burgers", {
+        type: "POST",
+        data: newBurger
+    }).then(function(){
+        console.log("added burger")
+
+    });
+    location.reload();
+});

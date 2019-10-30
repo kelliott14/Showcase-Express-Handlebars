@@ -1,13 +1,12 @@
 var connection = require("./connection.js");
 
 var orm = {
-    addBurger: function(table, burger_name, cb) {
+    addBurger: function(table, burger_name) {
         var queryString = "INSERT INTO ?? (burger_name) VALUES(?)";
         connection.query(queryString, [table, burger_name], function(err, result){
-            if (err) { 
+            if (err) 
                 throw err;
-            }
-            cb(result)
+            
 
         });
     },
