@@ -13,8 +13,6 @@ app.get("/", function(req, res) {
   });
 
 app.post("/api/burgers", function(req, res) {
-  console.log("app.post working")
-  console.log(req.body.burger_name)
     burger.addBurger("burger_name", [req.body.burger_name], function(result) {
         res.json({id: result.insertID});
     });
@@ -25,7 +23,6 @@ app.put("/api/burgers/:id", function(req, res) {
     console.log("condition ", condition);
 
     burger.devourBurger("burgers", condition, function(result) {
-      console.log(result)
         if (result.changedRows === 0) {
             return res.status(404).end()
         }

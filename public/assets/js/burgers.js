@@ -13,7 +13,6 @@ $(".devourButton").on("click", function(event) {
 
 $(".create-form").on("submit", function(event) {
     event.preventDefault();
-    console.log("burger js called")
     var newBurger = {
         burger_name: $("#userInput").val().trim()
     };
